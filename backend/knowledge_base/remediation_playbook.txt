@@ -1,0 +1,120 @@
+FRAUD REMEDIATION PLAYBOOK — AI SCAM SHIELD
+Source: Risk Operations Standard Operating Procedure v4.2
+Last Updated: 2024
+
+===== SECTION 1: RISK LEVEL DEFINITIONS AND RESPONSE MATRIX =====
+
+SAFE (Risk Score 0–39):
+- Action: APPROVE automatically
+- Monitoring: Standard transaction logging
+- Human Review: None required
+- SLA: Process within 5 seconds
+- Notification: None
+
+MEDIUM RISK (Risk Score 40–69):
+- Action: Approve with enhanced monitoring; OR apply soft hold for 60 seconds
+- Monitoring: Flag for next-day review by compliance team
+- Human Review: Recommended within 4 hours if multiple medium-risk transactions from same account
+- SLA: Decision within 60 seconds
+- Notification: Send in-app notification to customer confirming transaction details
+
+HIGH RISK (Risk Score 70–84):
+- Action: HOLD FUNDS — apply a 4-hour hold pending review
+- Monitoring: Immediate escalation to Tier 1 Fraud Analyst
+- Human Review: Required within 30 minutes
+- SLA: Decision within 30 minutes
+- Notification: Call customer to verbally confirm transaction intent; send SMS alert
+- Documentation: Log all decision rationale; prepare pre-SAR memo
+
+CRITICAL RISK (Risk Score 85–100):
+- Action: BLOCK transaction immediately; funds returned to sender
+- Monitoring: Real-time Tier 2 Senior Analyst escalation
+- Human Review: Required immediately (< 15 minutes)
+- SLA: Decision within 15 minutes; customer notification within 5 minutes
+- Documentation: Open SAR case; notify Compliance Officer
+- Law Enforcement: Contact local FBI field office if loss > $100,000
+
+===== SECTION 2: DECISION TREE FOR HOLD FUNDS ACTION =====
+
+When "Hold Funds" is selected by an analyst:
+1. Send customer notification: "We have temporarily held your transaction [ID] for security review. We will contact you within [X] hours."
+2. Attempt verbal confirmation call (3 attempts within 30 minutes)
+3. If customer confirms: Release hold; add beneficiary to verified list; log analyst override
+4. If customer cannot be reached: Escalate to Tier 2
+5. If customer reports fraud: Initiate full fraud case; file SAR; attempt recall
+6. Hold period maximum: 4 hours for High Risk; 24 hours for Critical Risk
+
+===== SECTION 3: ESCALATION PROCEDURES =====
+
+Tier 1 (Fraud Analyst) Responsibilities:
+- Review all High Risk (70–84) flagged transactions
+- Conduct customer outreach
+- Make approve/hold/escalate decision
+- Document reasoning in case management system
+
+Tier 2 (Senior Fraud Analyst) Responsibilities:
+- Review all Critical Risk (85–100) flagged transactions
+- Handle all Tier 1 escalations
+- Authorize SAR filings
+- Coordinate with law enforcement
+- Issue media holds if applicable
+
+Tier 3 (Compliance Officer / Legal) Responsibilities:
+- Approve SAR filings over $25,000
+- Coordinate regulatory reporting
+- Handle law enforcement subpoenas
+- Manage customer litigation risk
+
+===== SECTION 4: ACTIONS AND THEIR MEANINGS =====
+
+APPROVE:
+- Transaction is cleared to process immediately
+- No further action required at this time
+- Standard monitoring continues
+- Use when: Risk score is low, or analyst has confirmed legitimacy with customer
+
+HOLD FUNDS:
+- Transaction is temporarily suspended, pending review
+- Funds remain in sender's account; transaction is not canceled
+- Use when: Transaction is suspicious but not confirmed fraud; customer needs to be reached; more information is needed
+- Note: Cannot hold for more than 4 hours without customer consent or legal authority
+
+ESCALATE TO TIER 2:
+- Analyst cannot make a definitive decision
+- Case is transferred to a Senior Fraud Analyst immediately
+- Use when: Transaction involves amounts over $25,000; customer is unresponsive; multiple accounts are involved; organized fraud ring is suspected
+
+REJECT (Block):
+- Transaction is permanently canceled and funds returned to sender
+- Use when: Confirmed fraud; SAR is being filed; law enforcement has issued a hold order
+- Note: Rejection must be documented with full rationale; customer notification required within 1 hour
+
+===== SECTION 5: REGULATORY REPORTING TIMELINES =====
+
+Suspicious Activity Report (SAR):
+- Must be filed within 30 calendar days of identifying suspicious activity
+- If suspect is identified, deadline is 60 days
+- Minimum threshold: $5,000 for banks; $2,000 for money services businesses
+- Where to file: FinCEN BSA E-Filing System
+
+Currency Transaction Report (CTR):
+- Required for any cash transaction over $10,000
+- Must be filed within 15 days
+- Does not apply to instant payment transfers (non-cash), but banks should be aware of structuring patterns that mirror CTR avoidance
+
+Law Enforcement Notification:
+- Emergency notification (FBI, local police) warranted for:
+  - Active fraud in progress with victim still communicating with fraudster
+  - Loss amounts over $100,000
+  - Evidence of organized fraud ring (multiple accounts, coordinated timing)
+
+===== SECTION 6: CUSTOMER COMMUNICATION SCRIPTS =====
+
+Script A — Fraud Confirmation Call (Outbound):
+"Hello, this is [Name] from [Bank] Fraud Prevention. I'm calling about a payment of [Amount] you recently initiated to [Beneficiary]. Can you confirm that you authorized this payment? [Pause] Did anyone ask you to make this payment? [Pause] Do you know the person you're sending money to personally?"
+
+Script B — Hold Notification (SMS):
+"[BANK ALERT] Your payment of $[Amount] to [Beneficiary] has been temporarily held for security review. We'll contact you within [X] hours. Do NOT share this code: [Code]. Reply STOP to opt out of alerts."
+
+Script C — Release Confirmation:
+"Your payment of $[Amount] to [Beneficiary] has been released and is now processing. If you did not authorize this payment, call [Fraud Hotline] immediately."

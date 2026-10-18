@@ -1,0 +1,40 @@
+{
+  "model_type": "XGBoostClassifier",
+  "features": [
+    "log_amount",
+    "type_encoded",
+    "balance_diff_orig",
+    "balance_diff_dest",
+    "balance_zeroed",
+    "dest_was_empty",
+    "amount_to_balance_ratio"
+  ],
+  "training_rows": 2872684,
+  "test_accuracy": 0.9999,
+  "test_precision": 0.9867,
+  "test_recall": 0.9963,
+  "test_f1": 0.9915,
+  "test_roc_auc": 0.9984,
+  "feature_importances": {
+    "balance_zeroed": 0.5788347125053406,
+    "amount_to_balance_ratio": 0.3458244204521179,
+    "type_encoded": 0.025277240201830864,
+    "balance_diff_orig": 0.019432421773672104,
+    "balance_diff_dest": 0.01449625100940466,
+    "log_amount": 0.01081621553748846,
+    "dest_was_empty": 0.00531867565587163
+  },
+  "type_encoder_classes": [
+    "CASH_OUT",
+    "TRANSFER"
+  ],
+  "transaction_type_mapping": {
+    "P2P": "TRANSFER",
+    "Wire": "TRANSFER",
+    "Business": "TRANSFER",
+    "Payroll": "CASH_OUT",
+    "Bill Payment": "CASH_OUT",
+    "TRANSFER": "TRANSFER",
+    "CASH_OUT": "CASH_OUT"
+  }
+}

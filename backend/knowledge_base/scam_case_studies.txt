@@ -1,0 +1,118 @@
+FRAUD CASE STUDIES — AI SCAM SHIELD KNOWLEDGE BASE
+Source: Anonymized internal incident reports, FinCEN SAR summaries, CFPB enforcement actions
+Last Updated: 2024
+
+===== CASE STUDY 001: OPERATION WIRE TRAP =====
+Date: Q3 2023
+Loss Amount: $2.3 million across 47 victims
+Fraud Type: Authorized Push Payment (APP) + Business Email Compromise hybrid
+
+Summary:
+A sophisticated fraud ring compromised the email systems of a mid-size accounting firm. The fraudsters monitored internal communications for 3 weeks, learning the payment schedules and vendor relationships. They then sent convincing spoofed invoices to the firm's accounts payable department. Payments were authorized by legitimate employees and sent via FedNow instant payment to newly created mule accounts.
+
+Key Transaction Indicators That Were Missed:
+- All 47 transactions were sent to first-time beneficiaries (new accounts, all under 30 days old)
+- 31 of the 47 transactions occurred between 9 PM and 2 AM
+- Velocity anomaly: 8 transactions sent from one account in a 90-minute window
+- Average transaction amount: $48,936 — significantly above the account's historical average of $12,000
+
+What Caught It (Eventually):
+- A compliance analyst noticed that 6 different accounts had all sent money to the same beneficiary routing number within a 2-week period
+- Cross-account correlation flagged by a third-party risk system
+
+Lesson Learned:
+New beneficiary + high amount + late-night timing is a near-perfect predictor of BEC fraud. Any single indicator warrants review; all three warrant automatic hold.
+
+===== CASE STUDY 002: THE CRYPTO BROKER ROMANCE SCAM =====
+Date: Q1 2024
+Loss Amount: $890,000 from a single victim (68-year-old retiree)
+Fraud Type: Romance / Investment Scam (Pig Butchering)
+
+Summary:
+The victim was contacted on a social media platform by a person claiming to be a successful cryptocurrency investment broker. Over 6 weeks, the fraudster built a romantic relationship and convinced the victim to make a series of instant payments totaling $890,000 to "invest" in a fake trading platform. The victim believed their account balance was growing (the platform showed fabricated returns).
+
+Transaction Timeline:
+- Week 1: $1,200 (first-ever transfer to this beneficiary)
+- Week 2: $5,500 and $8,200
+- Week 3: $22,000 and $18,500
+- Week 4: $45,000 and $60,000
+- Week 5: $180,000
+- Week 6: $180,000 and $370,000 (final two before victim reported to bank)
+
+Key Signals:
+- Consistent escalating pattern: each transaction significantly larger than the last
+- All transactions to same new beneficiary (never previously used)
+- Victim's age (68) combined with unusual transaction pattern
+- Transaction memos included "investment," "trading account," "deposit"
+
+Outcome:
+$0 recovered. Fraudster account was in a foreign jurisdiction. Bank held the final $370,000 transaction but released it after victim insisted.
+
+Lesson Learned:
+Escalating transaction size to a single new beneficiary is a strong predictor of investment/romance scam. Human outreach to the sender before clearing high-value first-time transfers is essential.
+
+===== CASE STUDY 003: SYNTHETIC IDENTITY BUST-OUT =====
+Date: Q4 2022
+Loss Amount: $4.1 million across one regional bank
+Fraud Type: Synthetic Identity Fraud + Account Takeover
+
+Summary:
+A fraud ring created 234 synthetic identity accounts using stolen SSNs combined with fabricated names and addresses. Each account was "warmed up" over 30–90 days with small legitimate transactions. Once the accounts had built a credit profile, the fraudsters initiated maximum-limit instant payment transfers out to external mule accounts in a single coordinated "bust-out" event over 48 hours.
+
+Key Transaction Indicators:
+- All 234 accounts sent transactions within the same 48-hour window
+- Each account sent exactly one transaction (the maximum allowed)
+- All transactions were to first-time beneficiaries
+- Account age was 30–90 days for all accounts (just past the "new account" threshold)
+- Zero prior outbound transfer history in any of the accounts
+
+Detection Method:
+The bank's ML model detected the coordinated timing anomaly — 234 accounts with zero prior outbound history all sending maximum transfers in the same 48-hour window had a near-zero probability of being legitimate.
+
+Outcome:
+$2.8 million recovered via same-day recall. $1.3 million lost (funds already forwarded by mule accounts).
+
+Lesson Learned:
+Individual transaction signals can look clean. Graph-level and population-level anomalies (many accounts behaving identically at the same time) require network-level fraud detection, not just per-transaction analysis.
+
+===== CASE STUDY 004: PAYROLL DIVERSION ATTACK =====
+Date: Q2 2023
+Loss Amount: $340,000 across 12 employees
+Fraud Type: Account Takeover + Payroll Diversion
+
+Summary:
+A fraudster gained access to an HR platform via credential stuffing (using leaked username/password combinations from an unrelated breach). They changed the direct deposit bank account details for 12 employees to mule accounts. The payroll processor sent instant payments to the fraudulent accounts on the regular payroll date.
+
+Key Indicators:
+- 12 account changes within 72 hours of payroll processing date
+- All changes were to new, previously unregistered bank accounts
+- Changes were made at 2:30 AM on a Saturday (off-hours, unusual for HR activity)
+- The new accounts were all opened within the previous 14 days
+
+What a Better System Would Have Caught:
+- New beneficiary flag on all 12 payroll destinations
+- Account age check: all destination accounts under 14 days old
+- Off-hours activity flag: 2:30 AM HR system access
+
+Outcome:
+$180,000 recovered. Employees were reimbursed by the employer's cyber insurance policy.
+
+===== CASE STUDY 005: ELDER FINANCIAL EXPLOITATION — GRANDPARENT SCAM =====
+Date: Ongoing pattern, multiple cases
+Loss Amount: Average $9,000 per victim; millions annually
+Fraud Type: Social Engineering + Elder Fraud
+
+Summary:
+Fraudsters call elderly victims claiming to be grandchildren in legal trouble (arrest, car accident, hospital). They instruct the victim to send immediate "bail money" via instant payment and to keep it secret from family. The urgency and emotional manipulation cause victims to bypass normal caution.
+
+Key Indicators:
+- Victim demographic: typically 65+ (not directly detectable but account behavior can indicate)
+- Transaction amount: $2,000–$15,000 (matching typical "bail" amounts)
+- First-time beneficiary
+- Rapid transaction initiation (within minutes of phone call ending)
+- Often accompanied by a subsequent call requesting additional funds
+- Transaction memos sometimes include "bail," "legal," "emergency"
+
+Recommended Intervention:
+- Verbal confirmation call to sender for any new-beneficiary transaction over $1,000 for accounts with this risk profile
+- 30-minute cooling-off period allowing for family verification

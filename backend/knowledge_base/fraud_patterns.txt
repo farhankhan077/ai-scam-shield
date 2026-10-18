@@ -1,0 +1,99 @@
+FRAUD PATTERN KNOWLEDGE BASE — AI SCAM SHIELD
+Source: Internal Fraud Intelligence Unit + Industry Reports
+Last Updated: 2024
+
+===== PATTERN 1: MONEY MULE ACCOUNT TAKEOVER =====
+Description: Fraudsters recruit or compromise individuals (money mules) to receive and forward stolen funds. The mule account is typically a newly created account (less than 30 days old) or a dormant account that was recently reactivated.
+Indicators:
+- Account age under 30 days combined with a high-value inbound transaction
+- Multiple inbound transactions from different senders within 1 hour
+- Immediate outbound transfer to a different account after receipt
+- Beneficiary is listed as "new" (first-time transfer)
+- Geographic anomaly: sender and beneficiary in different regions with no prior relationship
+Risk Level: Critical
+Prevalence: High — accounts for 34% of instant payment fraud losses in 2023
+
+===== PATTERN 2: AUTHORIZED PUSH PAYMENT (APP) SCAM =====
+Description: Victim is tricked (via phone call, email, or social media) into authorizing a large instant payment to a fraudster's account. The victim believes they are paying a legitimate entity.
+Indicators:
+- Transaction amount significantly above the sender's historical average (>300% of mean)
+- Beneficiary account is new (added within 24 hours)
+- Transaction initiated outside of normal business hours
+- Single large transaction rather than a pattern of smaller ones
+- Sender has no prior relationship with the beneficiary
+Risk Level: High
+Prevalence: Very High — APP scams caused $1.7B in losses in the US in 2023
+Regulatory Note: Per CFPB guidance, banks must implement enhanced friction for first-time high-value transfers.
+
+===== PATTERN 3: VELOCITY ABUSE / STRUCTURING =====
+Description: Fraudster uses a compromised account to make multiple rapid transfers, either to move money quickly before detection or to structure amounts below reporting thresholds.
+Indicators:
+- More than 5 transactions in a 1-hour window from the same account
+- Amounts clustered just below $10,000 (CTR threshold) — e.g., $9,500 or $9,800
+- Multiple different beneficiaries in a short time window
+- Transaction amounts that are unusually uniform (e.g., exactly $5,000 three times)
+Risk Level: High
+Prevalence: Moderate
+Regulatory Note: Per FinCEN guidance, velocity patterns above 8 transactions/hour should trigger automatic SAR filing review.
+
+===== PATTERN 4: ROMANCE / INVESTMENT SCAM =====
+Description: Fraudster builds an online relationship (romantic or investment-advisor persona) over weeks, then instructs the victim to send funds via instant payment.
+Indicators:
+- First-ever transfer to this beneficiary with a high amount (>$2,000)
+- Transaction narrative includes words like "investment," "crypto," "offshore," "profit"
+- Sender has no prior history of large outbound transfers
+- Time of day: often late evening or weekend (when victim is isolated)
+Risk Level: High
+Prevalence: High — FTC reported $1.3B in romance scam losses in 2022
+
+===== PATTERN 5: ACCOUNT TAKEOVER (ATO) — FRAUDSTER ACTING AS LEGITIMATE OWNER =====
+Description: Fraudster gains control of a legitimate account (via credential stuffing, phishing, or SIM swap) and immediately initiates high-value transfers.
+Indicators:
+- Login from a new device or IP immediately before the transaction
+- Password reset within 24 hours before the transaction
+- Transaction to a beneficiary never used before
+- Amount is near the account's maximum transfer limit
+Risk Level: Critical
+Prevalence: High
+
+===== PATTERN 6: SYNTHETIC IDENTITY FRAUD =====
+Description: Fraudster creates a fake identity using a blend of real and fabricated information to open an account, build a credit history, then "bust out" by maxing out credit and draining the account.
+Indicators:
+- Account created very recently (under 14 days)
+- No prior transaction history
+- Large inbound transaction immediately followed by an outbound transfer
+- Beneficiary name does not match any KYC records
+Risk Level: Critical
+
+===== PATTERN 7: BUSINESS EMAIL COMPROMISE (BEC) =====
+Description: Fraudster impersonates a company executive or vendor via email and instructs an employee to initiate an urgent wire/instant payment to a fraudulent account.
+Indicators:
+- Large transaction (>$10,000) to a new beneficiary
+- Transaction labeled as "vendor payment," "invoice," or "payroll"
+- Sent during business hours to a business-sounding beneficiary name
+- No prior payment history to this beneficiary
+Risk Level: Critical
+
+===== PATTERN 8: RENTAL SCAM =====
+Description: Fraudster advertises a fake rental property online and requests an instant payment deposit before the victim views the property.
+Indicators:
+- Payment amount between $500–$3,000
+- New beneficiary
+- Transaction description includes "deposit," "rent," or "reservation"
+Risk Level: Medium
+
+===== PATTERN 9: PEER-TO-PEER (P2P) FRAUD =====
+Description: Fraudster uses social engineering or fake marketplace listings to trick victims into sending money via P2P instant payment apps.
+Indicators:
+- Small to medium amounts ($50–$1,500)
+- New beneficiary
+- Multiple failed transaction attempts before successful one
+Risk Level: Medium
+
+===== PATTERN 10: TAX REFUND / GOVERNMENT IMPERSONATION SCAM =====
+Description: Fraudster impersonates the IRS, SSA, or other government agency and demands immediate payment via instant payment under threat of arrest or benefit loss.
+Indicators:
+- New beneficiary with a generic name
+- Transaction amount between $200–$2,000
+- Transaction initiated very quickly (within 5 minutes of initiating contact)
+Risk Level: High

@@ -1,0 +1,102 @@
+REGULATORY GUIDANCE — AI SCAM SHIELD KNOWLEDGE BASE
+Source: FinCEN, CFPB, Federal Reserve, NACHA, OCC
+Last Updated: 2024
+
+===== SECTION 1: FINCEN GUIDANCE ON INSTANT PAYMENT FRAUD =====
+
+FinCEN Advisory FIN-2023-A001: Fraud Schemes Targeting Instant Payment Systems
+Key Points:
+- Financial institutions must implement real-time fraud detection for all instant payment transactions
+- Institutions are expected to maintain velocity monitoring rules appropriate to their customer base
+- Machine learning models used for fraud detection must be explainable and subject to model risk management (SR 11-7)
+- Institutions must train front-line staff to recognize and respond to customer reports of instant payment fraud
+- SAR filing is required for suspected fraud involving $5,000+ in losses
+- Key red flags identified by FinCEN for instant payment fraud:
+  a) Transactions to first-time beneficiaries above normal thresholds
+  b) High velocity of outbound transactions in a short time window
+  c) Newly opened accounts receiving and immediately forwarding large sums
+  d) Transactions inconsistent with the customer's known profile and history
+  e) Customer under unusual pressure to complete a transaction quickly
+
+FinCEN Guidance on SARs for Instant Payment Fraud:
+- Use SAR field "Structuring" for velocity-based patterns
+- Use SAR field "Money laundering" for mule account patterns
+- Use "Other" with narrative for APP scam / romance scam
+- Include in SAR narrative: transaction IDs, amounts, dates, beneficiary account details, and the specific fraud indicators observed
+
+===== SECTION 2: CFPB REGULATIONS ON PAYMENT FRAUD =====
+
+Electronic Fund Transfer Act (EFTA) / Regulation E:
+- Consumers have the right to dispute unauthorized electronic fund transfers
+- For instant payments, the bank must investigate disputes within 10 business days (or provisionally credit within 5 business days)
+- CRITICAL DISTINCTION: Authorized Push Payment (APP) scams — where the victim themselves authorized the payment — are NOT covered by Regulation E
+  - Consumers bear the loss in APP scams unless the bank failed to implement adequate fraud prevention
+- CFPB is actively considering extending Reg E protections to APP scams (proposed rule under review in 2024)
+
+CFPB Supervisory Guidance on Fraud Prevention:
+- Banks that do not implement "commercially reasonable" fraud prevention for instant payments may face UDAAP enforcement actions
+- "Commercially reasonable" now includes: real-time risk scoring, new beneficiary friction, velocity monitoring
+- Banks must clearly disclose to customers the risks of instant payments (irrevocability, speed)
+
+===== SECTION 3: NACHA / ACH NETWORK RULES (APPLICABLE TO RTP) =====
+
+NACHA Risk Management Framework:
+- Financial institutions must maintain a fraud risk management program appropriate to the volume and risk profile of their payment activity
+- Originating Depository Financial Institutions (ODFIs) bear primary liability for fraudulent ACH/RTP transactions they originate
+- Return Rate Thresholds: Unauthorized return rate > 0.5% triggers NACHA review; > 1.5% results in suspension from ACH network
+- Account Validation: ODFIs are required to validate new accounts before initiating first transfer (per NACHA 2022 rule)
+
+===== SECTION 4: OCC GUIDANCE ON MODEL RISK MANAGEMENT (SR 11-7) =====
+
+For AI/ML models used in fraud detection:
+- Model Validation: All models must be independently validated before deployment and annually thereafter
+- Documentation: Full documentation of model purpose, methodology, inputs, outputs, and limitations is required
+- Override Tracking: All human overrides of model decisions must be logged and reviewed quarterly
+- Bias Testing: Models must be tested for demographic bias; disparate impact analysis required annually
+- Performance Monitoring: Key metrics (precision, recall, false positive rate) must be tracked monthly
+- Model Inventory: All fraud models must be registered in the institution's model inventory
+
+Explainability Requirements (SR 11-7 Application to Instant Payments):
+- For any adverse action taken on a payment based on an AI model, the institution must be able to provide a clear, human-understandable explanation
+- "Black box" decisions are not acceptable for regulatory purposes
+- Explainability must be at the transaction level, not just the model level
+
+===== SECTION 5: BANK SECRECY ACT (BSA) REQUIREMENTS =====
+
+Customer Due Diligence (CDD) Rule:
+- Financial institutions must collect and verify beneficial ownership information for legal entity customers
+- Enhanced Due Diligence (EDD) required for high-risk customers (PEPs, correspondent banks, etc.)
+- Ongoing monitoring of customer activity against their risk profile is required
+
+Transaction Monitoring Program Requirements:
+- Must be risk-based and appropriate to the institution's size and business model
+- Must include automated alerts for suspicious activity
+- Must have written policies and procedures
+- Must be reviewed and updated at least annually
+- Staff responsible for AML/CFT must be trained at least annually
+
+===== SECTION 6: STATE-LEVEL REGULATIONS =====
+
+New York Department of Financial Services (NYDFS) Part 504:
+- Transaction monitoring programs must be maintained in compliance with applicable AML laws
+- Annual board-level certification of compliance required
+- Automated transaction monitoring systems must be tested at least annually
+
+California Consumer Financial Protection Law (CCFPL):
+- Extended consumer protection rights for certain payment fraud scenarios
+- Financial institutions must provide clearer disclosures about instant payment risks
+- Dispute resolution timelines similar to federal Reg E requirements
+
+===== SECTION 7: INTERNATIONAL CONSIDERATIONS =====
+
+SWIFT CATO (Customer Security Programme):
+- Mandatory controls for financial institutions using SWIFT for cross-border payments include real-time fraud monitoring
+
+EU Payment Services Directive 2 (PSD2):
+- Strong Customer Authentication (SCA) required for electronic payments in EU
+- Outbound payments over €30 require second-factor authentication
+- Instant payment fraud liability: bank bears liability for unauthorized transactions if SCA was not applied
+
+FATF (Financial Action Task Force) Recommendations:
+- Recommendation 16 (Wire Transfer Rules): Financial institutions must obtain and transmit originator and beneficiary information with all wire transfers
+- This applies to instant payments and creates a record trail essential for fraud investigation
